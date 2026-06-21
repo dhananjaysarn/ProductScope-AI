@@ -1,53 +1,53 @@
-import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
+// import jsPDF from "jspdf";
+// import html2canvas from "html2canvas";
 
-export const exportPDF =
-async (
-  elementId: string,
-  fileName: string
-) => {
+// export const exportPDF =
+// async (
+//   elementId: string,
+//   fileName: string
+// ) => {
 
-  const element =
-    document.getElementById(
-      elementId
-    );
+//   const element =
+//     document.getElementById(
+//       elementId
+//     );
 
-  if (!element) return;
+//   if (!element) return;
 
-  const canvas =
-    await html2canvas(
-      element
-    );
+//   const canvas =
+//     await html2canvas(
+//       element
+//     );
 
-  const image =
-    canvas.toDataURL(
-      "image/png"
-    );
+//   const image =
+//     canvas.toDataURL(
+//       "image/png"
+//     );
 
-  const pdf =
-    new jsPDF(
-      "p",
-      "mm",
-      "a4"
-    );
+//   const pdf =
+//     new jsPDF(
+//       "p",
+//       "mm",
+//       "a4"
+//     );
 
-  const width =
-    pdf.internal.pageSize.getWidth();
+//   const width =
+//     pdf.internal.pageSize.getWidth();
 
-  const height =
-    (canvas.height * width)
-    / canvas.width;
+//   const height =
+//     (canvas.height * width)
+//     / canvas.width;
 
-  pdf.addImage(
-    image,
-    "PNG",
-    0,
-    0,
-    width,
-    height
-  );
+//   pdf.addImage(
+//     image,
+//     "PNG",
+//     0,
+//     0,
+//     width,
+//     height
+//   );
 
-  pdf.save(
-    `${fileName}.pdf`
-  );
-};
+//   pdf.save(
+//     `${fileName}.pdf`
+//   );
+// };

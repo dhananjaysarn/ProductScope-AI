@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 import Analysis from "./Analysis";
-import History from "./History";
+
 
 export default function Dashboard() {
 
